@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# test requirements
+pytest = "*"
+pytest-cov = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+pylint = "*"
+# app requirements
+Cerberus = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+gunicorn = "*"
+python-multipart = "*"
+crepe = "*"
+scipy = "*"
+tensorflow = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
