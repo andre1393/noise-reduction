@@ -3,6 +3,24 @@
 Utils functions and objects that are used to support application
 """
 
+
+def count_value_frequency(arr: list) -> dict:
+    """
+    Given an array of floats, creates a dictionary
+    where the keys are the unique values and the values are frequencies
+        :param list arr: list array of floats
+        :returns: dictionary with values frequencies
+        :rtype: dict
+    """
+    frequency_dict = {}
+    for item in arr:
+        if item in frequency_dict:
+            frequency_dict[item] += 1
+        else:
+            frequency_dict[item] = 1
+    return dict(sorted(frequency_dict.items(), key=lambda i: i[1], reverse=True))
+
+
 normalized_frequencies = {
     'C -1': 16.351597,
     'C# -1': 17.323914,

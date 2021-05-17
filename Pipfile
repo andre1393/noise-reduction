@@ -18,7 +18,10 @@ gunicorn = "*"
 python-multipart = "*"
 crepe = "*"
 scipy = "*"
-tensorflow = "*"
+tensorflow = "==2.4.1"
+denoiser = "*"
+soundfile = "*"
+ffmpeg-python = "*"
 
 [requires]
 python_version = "3.7"
