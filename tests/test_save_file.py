@@ -1,7 +1,7 @@
 import os
 from tempfile import SpooledTemporaryFile
 
-from noise_reduction.api.app import save_file
+from audio_processor.api.app import save_file
 
 
 def test_save_file():

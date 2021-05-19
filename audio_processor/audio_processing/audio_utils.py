@@ -5,8 +5,8 @@ import shutil
 
 import librosa
 
-from noise_reduction.exceptions.audio_file import SaveTempFileException
-from noise_reduction.utils import normalized_frequencies, count_value_frequency
+from audio_processor.exceptions.audio_file import SaveTempFileException
+from audio_processor.utils import normalized_frequencies, count_value_frequency
 
 
 def open_audio(file: str):

@@ -13,4 +13,4 @@ def wavfile_read_mock(mocker):
 
 @pytest.fixture
 def save_file_mock(mocker):
-    return mocker.patch('noise_reduction.api.app.save_file', return_value='/tmp/test_file.wav')
+    return mocker.patch('audio_processor.api.app.save_file', return_value='/tmp/test_file.wav')

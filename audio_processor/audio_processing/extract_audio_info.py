@@ -2,7 +2,7 @@
 import logging
 import crepe
 
-from noise_reduction.exceptions.audio_processing import AudioProcessingException
+from audio_processor.exceptions.audio_processing import AudioProcessingException
 
 logger = logging.getLogger('gunicorn.error.noise')
 

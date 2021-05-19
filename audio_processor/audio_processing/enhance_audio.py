@@ -4,7 +4,7 @@ import os
 import logging
 
 from denoiser import enhance
-from noise_reduction.audio_processing.convert_audio import to_one_channel
+from audio_processor.audio_processing.convert_audio import to_one_channel
 
 logger = logging.getLogger('gunicorn.error.noise')
 

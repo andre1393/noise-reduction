@@ -1,6 +1,6 @@
 """Exceptions related to audio processing"""
 
-from noise_reduction.exceptions.base_exception import BaseAudioException
+from audio_processor.exceptions.base_exception import BaseAudioException
 
 
 class AudioProcessingException(BaseAudioException):

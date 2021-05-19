@@ -1,4 +1,4 @@
 import sys
 
 
-sys.path.insert(0, '../noise_reduction/')
+sys.path.insert(0, '../audio_processor/')

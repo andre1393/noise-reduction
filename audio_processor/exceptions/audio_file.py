@@ -1,5 +1,5 @@
 """Exceptions related to audio file manipulation"""
-from noise_reduction.exceptions.base_exception import BaseAudioException
+from audio_processor.exceptions.base_exception import BaseAudioException
 
 
 class SaveTempFileException(BaseAudioException):

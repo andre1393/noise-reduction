@@ -5,11 +5,11 @@ import logging
 
 from fastapi import FastAPI, File, UploadFile
 
-from noise_reduction.exceptions.audio_file import SaveTempFileException
-from noise_reduction.exceptions.audio_processing import AudioProcessingException
-from noise_reduction.audio_processing.enhance_audio import denoise
-from noise_reduction.audio_processing.audio_utils import save_file, open_audio, get_modal_note
-from noise_reduction.audio_processing.extract_audio_info import get_metadata
+from audio_processor.exceptions.audio_file import SaveTempFileException
+from audio_processor.exceptions.audio_processing import AudioProcessingException
+from audio_processor.audio_processing.enhance_audio import denoise
+from audio_processor.audio_processing.audio_utils import save_file, open_audio, get_modal_note
+from audio_processor.audio_processing.extract_audio_info import get_metadata
 
 app = FastAPI()
 
@@ -25,7 +25,7 @@ def health_check():
     return {'status': 'OK'}
 
 
-@app.post('/process-audio')
+@app.post('/process')
 async def process_audio(audio_file: UploadFile = File(...)):
     """Given an audio, process and return the most frequent note
             :param UploadFile audio_file: audio file in WAV format

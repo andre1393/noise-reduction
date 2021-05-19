@@ -1,6 +1,6 @@
 import pytest
 
-from noise_reduction.api.app import process_audio
+from audio_processor.api.app import process_audio
 from fastapi import UploadFile
 
 

@@ -1,4 +1,4 @@
-from noise_reduction.api.app import count_note_frequency
+from audio_processor.api.app import count_note_frequency
 
 
 def test_count_note_frequency():
