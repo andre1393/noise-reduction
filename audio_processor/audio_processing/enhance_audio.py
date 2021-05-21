@@ -29,6 +29,7 @@ async def denoise(tmp_dir: str, file: str, rate: int, convert_audio: bool) -> No
     args = get_enhance_args(tmp_dir, noisy_json, rate)
     enhance.enhance(args)
     logger.info('denoise complete')
+    return file.replace('.wav', '_enhanced.wav')
 
 
 def get_enhance_args(tmp_dir: str, noisy_json: str, sample_rate: int) -> SimpleNamespace:

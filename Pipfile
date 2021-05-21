@@ -23,6 +23,7 @@ denoiser = "*"
 soundfile = "*"
 ffmpeg-python = "*"
 librosa = "*"
+aiofiles = "*"
 
 [requires]
 python_version = "3.7"

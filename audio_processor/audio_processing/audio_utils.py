@@ -1,4 +1,5 @@
 """Audio utils functions"""
+import os
 import tempfile
 from tempfile import SpooledTemporaryFile
 import shutil
@@ -73,3 +74,11 @@ def get_modal_note(frequency: list, top: int = 10, normalize_type='int'):
             ).items()
         )[:top]
     )
+
+
+def prepare_audio(file: SpooledTemporaryFile, filename: str):
+    tmp_dir, audio_temp_file_name = save_file(file, filename)
+    audio_temp_file = os.path.join(tmp_dir, audio_temp_file_name)
+    rate, data = open_audio(audio_temp_file)
+
+    return tmp_dir, audio_temp_file_name, audio_temp_file, rate, data
