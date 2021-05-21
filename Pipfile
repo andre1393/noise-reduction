@@ -22,6 +22,7 @@ tensorflow = "==2.4.1"
 denoiser = "*"
 soundfile = "*"
 ffmpeg-python = "*"
+librosa = "*"
 
 [requires]
 python_version = "3.7"

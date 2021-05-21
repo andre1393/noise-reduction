@@ -26,20 +26,23 @@ def health_check():
 
 
 @app.post('/process')
-async def process_audio(audio_file: UploadFile = File(...)):
+async def process_audio(audio_file: UploadFile = File(...), convert_audio: bool = File(...)):
     """Given an audio, process and return the most frequent note
             :param UploadFile audio_file: audio file in WAV format
+            :param bool convert_audio: whether it should convert audio to one channel
             :return: dictionary containing the most frequent note
     """
     try:
         tmp_dir, audio_temp_file_name = save_file(audio_file.file, audio_file.filename)
+
         audio_temp_file = os.path.join(tmp_dir, audio_temp_file_name)
 
         rate, data = open_audio(audio_temp_file)
 
-        await denoise(tmp_dir, audio_temp_file_name, rate, convert_audio=True)
+        await denoise(tmp_dir, audio_temp_file_name, rate, convert_audio=convert_audio)
 
         time, frequency, _, _ = await get_metadata(rate, data)
+
         return {
             'status': 'OK',
             'filename': audio_file.filename,

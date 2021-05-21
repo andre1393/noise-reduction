@@ -14,6 +14,7 @@ def to_one_channel(file: str, rate: int) -> str:
     """
     try:
         converted_file = f'{file.replace(".wav", "_converted.wav")}'
+
         ffmpeg \
             .input(file) \
             .output(converted_file, ac=1, ar=rate) \

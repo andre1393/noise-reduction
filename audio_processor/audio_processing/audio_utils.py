@@ -51,21 +51,25 @@ def normalize_frequency(freq: float, freq_ref: list) -> float:
     return min(freq_ref, key=lambda list_value: abs(list_value - freq))
 
 
-def get_modal_note(frequency: list, top: int = 10):
+def get_modal_note(frequency: list, top: int = 10, normalize_type='int'):
     """Get list of most frequent frequency
 
     :param list frequency: list of frequencies over time
     :param int top: return n most frequent frequencies
     :return: dict with most frequent frequencies
     """
-    return count_value_frequency(
+    normalized_values = range(100_000) if normalize_type == 'int' else normalized_frequencies.values()
+    return dict(
         list(
-            map(
-                lambda f: normalize_frequency(
-                    f,
-                    list(normalized_frequencies.values())
-                ),
-                frequency
-            )
-        )
-    )[:top]
+            count_value_frequency(
+                list(
+                    map(
+                        lambda f: normalize_frequency(
+                            f, list(normalized_values)
+                        ) if normalize_type == 'notes' else int(f),
+                        frequency
+                    )
+                )
+            ).items()
+        )[:top]
+    )

@@ -1,4 +1,4 @@
-from audio_processor.api.app import normalize_frequency
+from audio_processor.audio_processing.audio_utils import normalize_frequency
 
 
 def test_normalize_frequency():
