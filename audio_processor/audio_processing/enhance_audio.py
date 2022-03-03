@@ -9,14 +9,14 @@ from audio_processor.audio_processing.convert_audio import to_one_channel
 logger = logging.getLogger('gunicorn.error.noise')
 
 
-async def denoise(tmp_dir: str, file: str, rate: int, convert_audio: bool) -> None:
+async def denoise(tmp_dir: str, file: str, rate: int, convert_audio: bool) -> str:
     """remove audio noisy
 
     :param tmp_dir: temporary directory containing audio file
     :param file: audio file
     :param rate: audio rate
     :param convert_audio: should convert audio before denoising
-    :return: None
+    :return: enhanced audio file name
     """
     logger.info('starting denoise')
     if convert_audio:
